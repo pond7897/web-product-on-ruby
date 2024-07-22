@@ -1,0 +1,14 @@
+<h1><%= @product.name %></h1>
+
+<p><%= @product.description %></p>
+
+<p><%= @product.price %></p>
+
+<ul>
+    <li> <%= link_to "Edit Product", edit_product_path(@product) %> </li>
+    <li> <%= link_to "Delete Product", product_path(@product), data: { 
+        turbo_method: :delete, 
+        turbo_confirm: "Are you sure?" 
+        } %> </li>
+    <li> <%= link_to "Back", products_path %> </li>
+</ul>

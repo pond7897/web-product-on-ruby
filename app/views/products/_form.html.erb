@@ -1,0 +1,25 @@
+<%= form_with model: @product do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
+  </div>
+  <div>
+    <%= form.label :price %><br>
+    <%= form.number_field :price %>
+  </div>
+
+  <% if @product.errors.present? %>
+    <%= @product.errors.full_messages.each do | message | %>
+    <div> <% message %> </div>
+    <% end %>
+  <% end %>
+  
+  <div>
+    <%= form.submit "Click" %>
+  </div>
+<% end %>
