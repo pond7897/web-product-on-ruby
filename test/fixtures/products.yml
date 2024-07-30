@@ -1,0 +1,9 @@
+pancake:
+  name: pancake
+  description: pancake is a very good
+  price: 30.0
+
+coke:
+  name: coke
+  description: coke is a very very good
+  price: 20.0
