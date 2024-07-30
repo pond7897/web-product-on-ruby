@@ -14,12 +14,12 @@
   </div>
 
   <% if @product.errors.present? %>
-    <%= @product.errors.full_messages.each do | message | %>
-    <div> <% message %> </div>
+    <% @product.errors.full_messages.each do | message | %>
+    <div> <%= message %> </div>
     <% end %>
   <% end %>
   
   <div>
     <%= form.submit "Click" %>
   </div>
-<% end %>
+<% end %> 
