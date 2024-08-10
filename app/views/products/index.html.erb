@@ -1,17 +1,19 @@
 
-<div> 
-  <h1 class="text-3xl text-red-500">List Products</h1>
+<div class= "w-[680px] mx-auto"> 
+  <h1 class="text-3xl text-red-500 ">List Products</h1>
 
-  <% @products.each do |product| %>
-    <%= form_with model: Order.new, url: orders_path, method: 'POST' do |f| %>
-      <div class="flex justify-center">
-        <h2 class="mx-3"> <%= product.name %> </h2>
-        <h2 class="mx-3"> <%= product.description  %> </h2>
-        <h2 class="mx-3"> <%= product.price %> </h2>
-        <%= f.hidden_field :product_id, value: product.id%>
-        <%= f.number_field :quantity, value: 1 %>
-        <button class="mx-3 text-green-700 bg-green-400 border-2 border-green-700 rounded-md h-8 w-16"> Buy </button>
-      </div>
+  <div class = "mt-5">
+    <% @products.each do |product| %>
+      <%= form_with model: Order.new, url: orders_path, method: 'POST' do |f| %>
+        <div class="grid grid-cols-[120px_200px_80px_80px_1fr] items-center gap-x-4 mb-4 pb-4 border-b rounded-lg">
+          <div> <%= product.name %> </div>
+          <div> <%= product.description  %> </div>
+          <div> <%= product.price %> </div>
+          <%= f.hidden_field :product_id, value: product.id%>
+          <%= f.number_field :quantity, value: 1, class: "rounded-md"%>
+          <button class="mx-3 text-green-700 bg-green-400 border-2 border-green-700 rounded-md h-8 w-16"> Buy </button>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
