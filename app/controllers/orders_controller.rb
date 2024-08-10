@@ -2,8 +2,7 @@ class OrdersController < ApplicationController
   def create
     @product = Product.find params[:order][:product_id]
     @quantity = params[:order][:quantity].to_i
-    @total_price = @quantity * @product.price
-    @order = Order.new(product: @product, quantity: @quantity, total_price: @total_price)
+    @order = Order.new(product: @product, quantity: @quantity)
 
     if @order.save
       redirect_to @order
